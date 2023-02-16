@@ -18,3 +18,4 @@ function seleccionFig(){
 
 	//document.getElementById('texto').innerText = `HOLA es un ${figura}.`;
 }
+}
