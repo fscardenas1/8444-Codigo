@@ -27,29 +27,13 @@
 
 		
 		
-		if(isset($_POST['calcular'])){
-			switch($_POST['tipo']){
-				case "cuadrado": $f = new cuadrado($_POST['lado_1']);break;
-				case "rectangulo": $f = new rectangulo($_POST['lado_1'],$_POST['lado_2']);break;
-				case "triangulo": $f = new triangulo($_POST['lado_1'],$_POST['lado_2'],$_POST['lado_3']);break;
-			}
-			mostrar($f);
-		}else{
+		$objCuadrado = new cuadrado();
+		$objRectangulo = new rectangulo();
+		$objTriangulo = new triangulo();
 			
-			echo figura::get_form();
-		}
+		echo figura::get_form();
 		
 		
-		function mostrar(formulas $fig){
-			$fig->area();
-			$fig->perimetro();
-			echo "<form id='respuesta'";
-			echo "<p id='sub'> ÁREA Y PERÍMETRO DE LA FIGURA SELECCIONADA </p>";
-			echo "<br><br>El área del " . $fig->GetTipo() . " es:  " . $fig->GetArea() . " m^2 <br>";
-			echo "<br>El perímetro del " . $fig->GetTipo() . " es:  " . $fig->GetPerimetro(). " m";
-			echo "<br><br><br><button class='action-button' name='regresar'><a href='index.php'>Inicio</a></button></form>";
-		}
-
 	?>
 
 	</center>
